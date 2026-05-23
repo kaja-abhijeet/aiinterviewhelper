@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --bg-base: #0d0f14;
+  --bg-surface: #13161e;
+  --bg-elevated: #1a1e2a;
+  --bg-hover: #1f2433;
+  --border-subtle: rgba(255,255,255,0.07);
+  --border-default: rgba(255,255,255,0.11);
+  --text-primary: #f0f2f8;
+  --text-secondary: #8b92a8;
+  --text-muted: #545b6f;
+  --accent-blue: #4f8ef7;
+  --accent-blue-dim: rgba(79,142,247,0.12);
+  --accent-purple: #9b6dff;
+  --accent-purple-dim: rgba(155,109,255,0.12);
+  --accent-emerald: #2dd4a0;
+  --accent-emerald-dim: rgba(45,212,160,0.10);
+  --accent-amber: #f5a623;
+  --accent-amber-dim: rgba(245,166,35,0.12);
+  --glow-blue: 0 0 40px rgba(79,142,247,0.15);
+  --glow-purple: 0 0 40px rgba(155,109,255,0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.12);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.22);
+}
+
+/* Chat thread scroll area */
+.chat-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.12) transparent;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(79,142,247,0.3);
+  color: #fff;
+}
+
+/* Monospace for code/answer areas */
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Subtle grid background texture */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Glow ring on focus */
+textarea:focus, select:focus, input:focus {
+  outline: none;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #4f8ef7 0%, #9b6dff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass surface */
+.glass {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Score ring color classes */
+.score-high { color: #2dd4a0; }
+.score-mid  { color: #f5a623; }
+.score-low  { color: #f87171; }
